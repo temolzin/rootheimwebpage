@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>Certificaciones | Root Heim Company</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/royal-preload.css" />
+    <style>
+        .about-certifications {
+            background-color: #F8F8F8;
+            padding: 110px 0 80px;
+        }
+        .about-certifications .ot-heading .main-heading {
+            color: #100F3A;
+        }
+        .about-certifications .cert-row {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+        }
+        .about-certifications .cert-group {
+            margin-bottom: 0;
+        }
+        .about-certifications .cert-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .about-certifications .cert-group-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(16, 15, 58, 0.1);
+        }
+        .about-certifications .cert-group-title i {
+            color: #2058ff;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        .about-certifications .cert-group-title h4 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+            color: #100F3A;
+            font-family: "Montserrat", sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .about-certifications .cert-item {
+            display: flex;
+            align-items: flex-start;
+            flex: 0 0 calc(50% - 6px);
+            max-width: calc(50% - 6px);
+            padding: 18px 22px;
+            background: #ffffff;
+            border: 1px solid #ececf0;
+            border-left: 3px solid #2058ff;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .about-certifications .cert-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+        .about-certifications .cert-item .cert-icon {
+            flex: 0 0 auto;
+            color: #2058ff;
+            font-size: 18px;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+        .about-certifications .cert-item .cert-text h5 {
+            margin: 0 0 3px;
+            font-size: 15px;
+            font-weight: 700;
+            line-height: 1.4;
+            color: #100F3A;
+            font-family: "Montserrat", sans-serif;
+        }
+        .about-certifications .cert-item .cert-text span {
+            font-size: 13px;
+            color: #8E88B8;
+            line-height: 1.4;
+            display: block;
+        }
+        @media (max-width: 767px) {
+            .about-certifications {
+                padding: 70px 0 50px;
+            }
+            .about-certifications .cert-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+        .cert-cta {
+            padding: 30px 0 110px;
+            background-color: #F8F8F8;
+        }
+        .cert-cta-inner {
+            background-image: url(images/background/bg-cta1.jpg);
+            background-size: cover;
+            background-position: center;
+            background-color: #2058ff;
+            border-radius: 8px;
+            padding: 55px 60px;
+            box-shadow: 0 20px 50px rgba(16, 15, 58, 0.18);
+        }
+        .cert-cta-span {
+            color: #FFFFFF;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .cert-cta-title {
+            color: #FFFFFF;
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 0;
+        }
+        .octf-btn-cert {
+            font-family: "Nunito Sans", sans-serif;
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            background-color: #FFFFFF;
+            color: #2058ff;
+            border-radius: 4px;
+            padding: 18px 38px;
+            line-height: 1;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .octf-btn-cert:hover {
+            background-color: #100F3A;
+            color: #FFFFFF;
+            transform: translateY(-3px);
+        }
+        @media (max-width: 767px) {
+            .cert-cta {
+                padding: 20px 0 70px;
+            }
+            .cert-cta-inner {
+                padding: 45px 30px;
+            }
+            .cert-cta-title {
+                font-size: 26px;
+            }
+            .octf-btn-cert {
+                margin-top: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body class="royal_preloader">
+    <div id="page" class="site">
+        <header id="site-header" class="site-header header-style-2 header-fullwidth sticky-header header-static">
+            <!-- Main Header start -->
+            <div class="header-topbar">
+                <div class="octf-area-wrap">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="topbar-info">
+                                    <li><i class="fas fa-envelope"></i><a href="mailto:info@rootheim.com"> info@rootheim.com</a></li>
+                                    <li><i class="fas fa-clock"></i> Lun - Vie: 9:00 am - 6:00 pm</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6 text-right">
+                                <div class="topbar-right">
+                                    <ul class="extra-text">
+                                        <li>Experiencia y tecnología para responder a nuevos desafíos. <a href="contact.html">Contrátanos</a></li>
+                                    </ul>
+                                    <ul class="social-list">
+                                        <li><a href="https://www.facebook.com/rootheimcompany" target="_self"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/rootheim/" target="_self"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="https://www.instagram.com/rootheimcompany" target="_self"><i class="fab fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="octf-main-header">
+                <div class="octf-area-wrap">
+                    <div class="container-fluid octf-mainbar-container">
+                        <div class="octf-mainbar">
+                            <div class="octf-mainbar-row octf-row">
+                                <div class="octf-col logo-col">
+                                    <div id="site-logo" class="site-logo">
+                                        <a href="index.html">
+                                            <img src="images/logo.png" alt="Root Heim" class="">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="octf-col menu-col">
+                                    <nav id="site-navigation" class="main-navigation">
+                                        <ul class="menu">
+                                            <li><a href="index.html">Inicio</a></li>
+                                            <li class="menu-item-has-children current-menu-ancestor"><a href="#">Empresa</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="about-us.html">Acerca de Nosotros</a></li>
+                                                    <li><a href="why-choose-us.html">¿Por Qué Escogernos?</a></li>
+                                                    <li><a href="faq.html">FAQS</a></li>
+                                                    <li><a href="internships.html">Estadías Profesionales</a></li>
+                                                    <li class="current-menu-item"><a href="certifications.html">Certificaciones</a></li>
+                                                </ul>
+                                            </li>
+<li class="menu-item-has-children"><a href="it-services.html">Servicios</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="it-services.html">Servicios de TI</a></li>
+                                        <li><a href="pricing.html">Planes y Precios</a></li>
+                                    </ul>
+                                </li>
+                                            <li><a href="contact.html">Contacto</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="octf-col cta-col text-right">
+                                <!-- Call To Action -->
+                                    <div class="octf-btn-cta">
+                                        <div class="octf-header-module">
+                                        </div>
+                                        <div class="octf-header-module">
+                                            <div class="btn-cta-group contact-header">
+                                                <i class="fas fa-phone"></i>
+                                                <div class="cinfo-header">
+                                                    <span>¿Tienes preguntas?</span>
+                                                    <span class="main-text"><a href="tel:+525619660990">+52 56 1966 0990</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="octf-header-module">
+                                            <div class="btn-cta-group btn-cta-header">
+                                                <a class="octf-btn octf-btn-third" href="contact.html">COTIZACIÓN</a>
+                                            </div>
+                                        </div>
+                                    </div>                              
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_mobile">
+                <div class="container">
+                    <div class="mlogo_wrapper clearfix">
+                        <div class="mobile_logo">
+                            <a href="index.html">
+                                <img src="images/logo.png" alt="Root Heim">
+                            </a>
+                        </div>
+                        <div id="mmenu_toggle">
+                            <button></button>
+                        </div>
+                    </div>
+                    <div class="mmenu_wrapper">
+                        <div class="mobile_nav collapse">
+                            <ul id="menu-main-menu" class="mobile_mainmenu">
+                                <li><a href="index.html">Inicio</a></li>
+                                <li class="menu-item-has-children current-menu-ancestor"><a href="#">Empresa</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="about-us.html">Acerca de Nosotros</a></li>
+                                        <li><a href="why-choose-us.html">¿Por Qué Escogernos?</a></li>
+                                        <li><a href="faq.html">FAQS</a></li>
+                                        <li><a href="internships.html">Estadías Profesionales</a></li>
+                                        <li class="current-menu-item"><a href="certifications.html">Certificaciones</a></li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item-has-children"><a href="it-services.html">Servicios</a>
+                                                <ul class="sub-menu">
+                                                    <li><a href="it-services.html">Servicios de TI</a></li>
+                                                    <li><a href="pricing.html">Planes y Precios</a></li>
+                                                </ul>
+                                            </li>
+                                <li><a href="contact.html">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="content" class="site-content">
+            <div class="page-header flex-middle">
+                <div class="container">
+                    <div class="inner flex-middle">
+                        <h1 class="page-title">Certificaciones</h1>
+                        <ul id="breadcrumbs" class="breadcrumbs none-style">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li class="active">Certificaciones</li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+            <section class="about-certifications">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 text-center">
+                            <div class="ot-heading">
+                                <span>// certificaciones del equipo</span>
+                                <h2 class="main-heading">Nuestro equipo cuenta con las siguientes certificaciones</h2>
+                            </div>
+                            <div class="space-35"></div>
+                        </div>
+                    </div>
+                    <div class="cert-row">
+                        <div class="cert-group">
+                            <div class="cert-group-title">
+                                <i class="fas fa-certificate"></i>
+                                <h4>Red Hat</h4>
+                            </div>
+                            <div class="cert-grid">
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat Enterprise Linux Automation with Ansible (RH294)</h5>
+                                        <span>Ver. 9.0</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat Security: Identity Management and Authentication (RH362)</h5>
+                                        <span>Ver. 9.1</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat Security: Linux in Physical, Virtual, and Cloud (RH415)</h5>
+                                        <span>Ver. 9.2</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat High Availability Clustering for SAP Solutions (RH445)</h5>
+                                        <span>Ver. 8.4</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat Satellite 6 Administration (RH403)</h5>
+                                        <span>Ver. 6.15</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat Certified System Administrator (RHCSA)</h5>
+                                        <span>Red Hat</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat System Administration II (RH134)</h5>
+                                        <span>Ver. 10</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Red Hat System Administration I (RH124)</h5>
+                                        <span>Ver. 10.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-group">
+                            <div class="cert-group-title">
+                                <i class="fas fa-certificate"></i>
+                                <h4>Cisco Networking Academy</h4>
+                            </div>
+                            <div class="cert-grid">
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>IT Essentials: Fundamentos de hardware, software y seguridad técnica</h5>
+                                        <span>Cisco Networking Academy</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>CCNAv7: Switching, Routing, and Wireless Essentials</h5>
+                                        <span>Cisco Networking Academy</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>IoT Fundamentals: Connecting Things</h5>
+                                        <span>Cisco Networking Academy</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-group">
+                            <div class="cert-group-title">
+                                <i class="fas fa-certificate"></i>
+                                <h4>Soluciones Empresariales</h4>
+                            </div>
+                            <div class="cert-grid">
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>Análisis de Datos</h5>
+                                        <span>Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cert-group">
+                            <div class="cert-group-title">
+                                <i class="fas fa-certificate"></i>
+                                <h4>Ciberseguridad</h4>
+                            </div>
+                            <div class="cert-grid">
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>OSCP — Offensive Security Certified Professional</h5>
+                                        <span>Offensive Security</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>CEH — Certified Ethical Hacker</h5>
+                                        <span>EC-Council</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>CHFI — Computer Hacking Forensic Investigator</h5>
+                                        <span>EC-Council</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>CND — Certified Network Defender</h5>
+                                        <span>EC-Council</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>ECSS — Certified Security Specialist / Certified Incident Handler</h5>
+                                        <span>EC-Council</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>GPEN — GIAC Penetration Tester</h5>
+                                        <span>GIAC</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>GCFA — GIAC Certified Forensic Analyst</h5>
+                                        <span>GIAC</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>ACE — AccessData Certified Examiner</h5>
+                                        <span>AccessData</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>CompTIA Security+</h5>
+                                        <span>CompTIA</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>CompTIA Linux+</h5>
+                                        <span>CompTIA</span>
+                                    </div>
+                                </div>
+                                <div class="cert-item">
+                                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                                    <div class="cert-text">
+                                        <h5>LPIC-1</h5>
+                                        <span>Linux Professional Institute</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cert-cta">
+                <div class="container">
+                    <div class="cert-cta-inner">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8 col-md-7 text-center text-md-left">
+                                <div class="ot-heading mb-0">
+                                    <span class="cert-cta-span">// equipo certificado</span>
+                                    <h2 class="main-heading cert-cta-title">¿Buscas un equipo con certificaciones que respalden su trabajo?</h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-5 text-center text-md-right">
+                                <a href="contact.html" class="octf-btn octf-btn-cert">Solicitar Cotización</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    <footer id="site-footer" class="site-footer footer-v2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <img src="images/logo-light.png" alt="" style="max-width:120px;height:auto;">
+                </div>
+            </div>
+            <div class="space-60"></div>
+            <div class="row justify-content-center">
+                <div class="col-md-4 col-sm-6">
+                    <div class="contact-info box-style2 ft-contact-info">
+                        <div class="box-icon"><i class="flaticon-world-globe"></i></div>
+                        <p>Calle La Palma, Teotihuacán, Estado de México</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="contact-info box-style2 ft-contact-info">
+                        <div class="box-icon"><i class="flaticon-envelope"></i></div>
+                        <p>info@rootheim.com</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="contact-info box-style2 ft-contact-info">
+                        <div class="box-icon"><i class="flaticon-phone-1"></i></div>
+                        <p>+52 56 1966 0990</p>
+                    </div>
+                </div>
+            </div>
+            <div class="space-65"></div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="it-services.html">Servicios</a></li>
+                            <li><a href="contact.html">Contacto</a></li>
+                            <li><a href="Terminos_Condiciones_RootHeim_v2.pdf">Términos de Servicio</a></li>
+                            <li><a href="Politicas_Privacidad_RootHeim_v2.pdf">Políticas de Privacidad</a></li>
+                        </ul>
+                    </div>
+                    <div class="space-20"></div>
+                    <p class="copyright-text v2">Derechos Reservados © 2026 Root Heim Company S. A. de C. V.</p>
+                    <div class="space-26"></div>
+                    <div class="ft-list-icon">
+                        <a class="facebook" href="https://www.facebook.com/rootheimcompany"><i class="fab fa-facebook-f"></i></a>
+                        <a class="linkedin" href="https://www.linkedin.com/company/rootheim/"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="instagram" href="https://www.instagram.com/rootheimcompany"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer><!-- #site-footer -->
+</div><!-- #page -->
+<a id="back-to-top" href="#" class="show"><i class="flaticon-up-arrow"></i></a>
+    <a class="wa-floating" href="https://wa.me/5215619660990" target="_blank" rel="noopener" aria-label="Enviar mensaje de WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>    </a>
+
+        <!-- jQuery -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/easypiechart.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/header-mobile.js"></script>
+    <script src="js/royal_preloader.min.js"></script>
+    <script>
+        window.jQuery = window.$ = jQuery;  
+        (function($) { "use strict";
+            //Preloader
+            Royal_Preloader.config({
+                mode           : 'logo',
+                logo           : 'images/logo.png',
+                logo_size      : [200, 94],
+                showProgress   : true,
+                showPercentage : true,
+                text_colour: '#000000',
+                background:  '#ffffff'
+            });
+        })(jQuery);
+    </script> 
+</body>
+</html>

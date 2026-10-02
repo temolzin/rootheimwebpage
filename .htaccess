@@ -1,0 +1,150 @@
+# =========================================
+# Configuración original del tema
+# =========================================
+AddType text/html .html
+
+# =========================================
+# Páginas de error personalizadas
+# =========================================
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /404-error.html
+ErrorDocument 400 /400.shtml
+ErrorDocument 401 /401.shtml
+ErrorDocument 402 /402.shtml
+ErrorDocument 405 /405.shtml
+ErrorDocument 406 /406.shtml
+ErrorDocument 407 /407.shtml
+ErrorDocument 408 /408.shtml
+ErrorDocument 409 /409.shtml
+ErrorDocument 410 /410.shtml
+ErrorDocument 411 /411.shtml
+ErrorDocument 412 /412.shtml
+ErrorDocument 413 /413.shtml
+ErrorDocument 414 /414.shtml
+ErrorDocument 415 /415.shtml
+ErrorDocument 416 /416.shtml
+ErrorDocument 417 /417.shtml
+ErrorDocument 422 /422.shtml
+ErrorDocument 423 /423.shtml
+ErrorDocument 424 /424.shtml
+ErrorDocument 500 /500.shtml
+ErrorDocument 501 /501.shtml
+ErrorDocument 502 /502.shtml
+ErrorDocument 503 /503.shtml
+ErrorDocument 504 /504.shtml
+ErrorDocument 505 /505.shtml
+ErrorDocument 506 /506.shtml
+ErrorDocument 507 /507.shtml
+ErrorDocument 510 /510.shtml
+
+# =========================================
+# Forzar HTTPS
+# =========================================
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# =========================================
+# Desactivar listado de directorios y symlinks inseguros
+# =========================================
+Options -Indexes -FollowSymLinks
+Options +SymLinksIfOwnerMatch
+
+# =========================================
+# Ocultar firma del servidor
+# =========================================
+ServerSignature Off
+
+# =========================================
+# Bloquear métodos HTTP peligrosos/innecesarios
+# (se dejan GET/POST porque contact.php, workform.php, etc. usan POST)
+# =========================================
+<LimitExcept GET POST HEAD>
+    Require all denied
+</LimitExcept>
+
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK|DELETE|PUT|CONNECT) [NC]
+RewriteRule .* - [F,L]
+
+# =========================================
+# Proteger archivos de configuración y credenciales SMTP
+# (mail-config.php contiene datos de conexión a Gmail SMTP)
+# =========================================
+<Files "mail-config.php">
+    Require all denied
+</Files>
+
+<FilesMatch "\.(env|ini|log|sql|bak|old|zip|tar|gz|conf|swp|inc|yml|yaml|git)$">
+    Require all denied
+</FilesMatch>
+
+# Bloquear acceso directo a la carpeta de la librería de correo
+RewriteRule ^mailer/ - [F,L]
+
+# Bloquear acceso a archivos y carpetas ocultas (ej. .git, .env)
+# Excepción: /.well-known/ es una ruta estándar legítima (RFC 8615),
+# usada por Let's Encrypt (validación SSL), security.txt, etc.
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+RewriteCond %{REQUEST_URI} !^/\.well-known/
+RewriteCond %{REQUEST_URI} "(^|/)\." [NC]
+RewriteRule .* - [F,L]
+
+# =========================================
+# Bloquear user-agents típicos de fuzzing/escaneo
+# (excluye .php: son los formularios, que reciben datos legítimos
+#  de usuarios reales y no deben pasar por este filtro)
+# =========================================
+RewriteCond %{REQUEST_URI} !\.php$
+RewriteCond %{HTTP_USER_AGENT} (ffuf|gobuster|dirbuster|dirb|wfuzz|nikto|sqlmap|nmap|masscan|nessus|acunetix|libwww-perl) [NC]
+RewriteRule .* - [F,L]
+
+# =========================================
+# Bloquear intentos comunes de inyección/traversal en la URL
+# (solo mira la query string ?..., no el body del POST; se excluye
+#  .php explícitamente para no interferir nunca con los formularios)
+# =========================================
+RewriteCond %{REQUEST_URI} !\.php$
+RewriteCond %{QUERY_STRING} (\.\./|\.\.%2f|etc/passwd|boot\.ini|<script|union.*select|base64_) [NC]
+RewriteRule .* - [F,L]
+
+# =========================================
+# Anti-hotlinking de imágenes
+# =========================================
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?rootheim\.com [NC]
+RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|gif|webp|svg)$ [NC]
+RewriteRule .* - [F,L]
+
+# =========================================
+# Cabeceras de seguridad HTTP
+# (script-src/style-src usan 'unsafe-inline' porque el tema trae
+#  <script> y style="" inline; se permite:
+#   - google.com/gstatic.com -> reCAPTCHA + iframe de Google Maps
+#   - fonts.googleapis.com   -> @import de Google Fonts en style.css,
+#                               home15.css, home16.css y tp-color-picker.css
+#   - fonts.gstatic.com      -> los archivos .woff2 que sirve esa CSS)
+# =========================================
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; frame-src https://www.google.com; frame-ancestors 'self'; connect-src 'self' https://wa.me https://www.google.com"
+    Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+    Header always set Cross-Origin-Resource-Policy "same-site"
+</IfModule>
+
+# =========================================
+# Evitar acceso directo al propio .htaccess
+# =========================================
+<Files ".htaccess">
+    Require all denied
+</Files>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit

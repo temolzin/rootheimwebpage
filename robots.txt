@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# No indexar procesadores de formularios, librerías ni páginas de error
+Disallow: /mailer/
+Disallow: /errors/
+Disallow: /404-error.html
+Disallow: /*.php$
+
+Sitemap: https://rootheim.com/sitemap.xml
